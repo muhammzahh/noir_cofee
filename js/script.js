@@ -10,8 +10,8 @@ const PRODUCTS = [
     price: 32000,
     rating: "4.9",
     color: ["#d8c4a8", "#a87545"],
-    desc: "A velvety double espresso blended with micro-foamed milk for a silky, balanced finish.",
-    notes: "Toasted hazelnut, cocoa butter, and subtle madagascar vanilla.",
+    desc: "Double espresso lembut berpadu dengan susu bertekstur mikro untuk cita rasa halus dan seimbang.",
+    notes: "Kacang hazelnut panggang, cocoa butter, dan sentuhan vanila alami.",
     image: "assets/images/kopi-latte.jpg",
   },
   {
@@ -22,8 +22,8 @@ const PRODUCTS = [
     price: 36000,
     rating: "5.0",
     color: ["#a87545", "#4a2f1d"],
-    desc: "Espresso over fresh milk and organic Indonesian aren palm sugar nectar. Rich, creamy, and smoky-sweet.",
-    notes: "Warm caramel, smoky palm sugar, and creamy butterscotch.",
+    desc: "Espresso di atas susu segar dingin dan nektar gula aren organik nusantara. Gurih, legit, dan manis smoky alami.",
+    notes: "Karamel hangat, gula aren asap, dan kelembutan butterscotch.",
     image: "assets/images/arren-latte.png",
   },
   {
@@ -34,20 +34,20 @@ const PRODUCTS = [
     price: 28000,
     rating: "4.8",
     color: ["#5a3d28", "#120F0D"],
-    desc: "Pure single-origin espresso poured over cold mountain spring water and ice. Crisp, bold, and refreshing.",
-    notes: "Dark chocolate, bright citrus zest, and clean herbal finish.",
+    desc: "Espresso single-origin murni dituangkan di atas air mata air pegunungan dingin dan es batu kristal. Bersih, pekat, dan menyegarkan.",
+    notes: "Dark chocolate pekat, kesegaran jeruk citrus, dan sensasi herbal lembut.",
     image: "assets/images/americano.jpg",
   },
   {
     id: "cappuccino",
-    name: "Classic Cappuccino",
+    name: "Cappuccino Klasik",
     category: "hot",
     tags: ["hot"],
     price: 34000,
     rating: "4.9",
     color: ["#c4a888", "#7a5030"],
-    desc: "Equal parts espresso, steamed milk, and dense velvety microfoam served at perfect warmth in a ceramic cup.",
-    notes: "Toasted almond, milk sweetness, and cocoa finish.",
+    desc: "Perpaduan seimbang espresso, steamed milk, dan busa mikro padat lembut disajikan hangat dalam cangkir keramik.",
+    notes: "Almond panggang, manis alami susu segar, dan aroma kakao.",
     image: "assets/images/cappuccino.png",
   },
   {
@@ -58,8 +58,8 @@ const PRODUCTS = [
     price: 38000,
     rating: "5.0",
     color: ["#e0a96d", "#402211"],
-    desc: "Layered chilled milk, bold espresso, whipped cream, and cascading golden artisan caramel drizzle.",
-    notes: "Burnt butter caramel, Madagascar vanilla, and roasted espresso.",
+    desc: "Lapisan susu dingin, espresso pekat beraroma kuat, whipped cream, dan lelehan saus karamel emas artisanal.",
+    notes: "Karamel mentega gurih, vanila madagaskar, dan aroma kopi sangrai.",
     image: "assets/images/caramel-macchiato.png",
   },
   {
@@ -70,8 +70,8 @@ const PRODUCTS = [
     price: 38000,
     rating: "4.9",
     color: ["#502b1c", "#1f100a"],
-    desc: "Decadent iced mocha in a jar with dark chocolate fudge swirl, double espresso, chilled milk, and whipped cream topped with chocolate flakes.",
-    notes: "Bittersweet 70% dark chocolate, roasted cacao, and creamy vanilla.",
+    desc: "Kreasi moka dingin dengan saus fudge cokelat hitam, double espresso, susu segar dingin, dan whipped cream taburan serpihan cokelat.",
+    notes: "Cokelat hitam 70% bittersweet, biji kakao sangrai, dan vanila lembut.",
     image: "assets/images/mocha.png",
   },
 ];
@@ -292,7 +292,7 @@ function renderMenu() {
         <div class="img">
           <img src="${imgSrc(p)}" alt="${p.name}" loading="lazy">
           <div class="card-overlay-glare"></div>
-          <button class="wish ${isWished ? "on" : ""}" data-w="${p.id}" aria-label="Wishlist for ${p.name}" aria-pressed="${isWished}">
+          <button class="wish ${isWished ? "on" : ""}" data-w="${p.id}" aria-label="Favorit untuk ${p.name}" aria-pressed="${isWished}">
             ${isWished ? "♥" : "♡"}
           </button>
         </div>
@@ -301,8 +301,8 @@ function renderMenu() {
           <p class="desc">${p.desc}</p>
           <p class="price">${rp(p.price)}</p>
           <div class="row">
-            <button class="btn" data-d="${p.id}">Details</button>
-            <button class="btn primary" data-a="${p.id}">Add to Cart</button>
+            <button class="btn" data-d="${p.id}">Detail</button>
+            <button class="btn primary" data-a="${p.id}">Tambah</button>
           </div>
         </div>
       </article>`;
@@ -383,7 +383,7 @@ function toggleWishlist(id) {
   wish = isSaved ? wish.filter((x) => x !== canonicalId) : [...wish, canonicalId];
   save("noir-wish", wish);
   renderMenu();
-  showToast(wish.includes(canonicalId) ? `Saved ${prod.name} to wishlist ♥` : `Removed ${prod.name} from wishlist`);
+  showToast(wish.includes(canonicalId) ? `${prod.name} disimpan ke favorit ♥` : `${prod.name} dihapus dari favorit`);
 }
 
 // ==========================================
@@ -396,7 +396,7 @@ function addToCart(id) {
   cart[canonicalId] = (cart[canonicalId] || 0) + 1;
   save("noir-cart", cart);
   updateCartUI();
-  showToast(`${prod.name} added to cart`);
+  showToast(`${prod.name} ditambahkan ke keranjang`);
 
   // Cart button bounce animation
   const cartBtn = $("#cartBtn");
@@ -438,14 +438,14 @@ function updateCartUI() {
             <span class="cart-item-price">${rp(p.price * q)}</span>
           </div>
           <span class="qty">
-            <button data-m="${p.id}" aria-label="Decrease ${p.name}">−</button>
+            <button data-m="${p.id}" aria-label="Kurangi ${p.name}">−</button>
             <span>${q}</span>
-            <button data-p="${p.id}" aria-label="Increase ${p.name}">+</button>
+            <button data-p="${p.id}" aria-label="Tambah ${p.name}">+</button>
           </span>
         </li>`
           )
           .join("")
-      : '<li class="empty-cart-msg">Your cart is currently empty. Explore our coffee menu!</li>';
+      : '<li class="empty-cart-msg">Keranjang belanja Anda masih kosong. Silakan pilih menu kopi kami!</li>';
   }
 }
 
@@ -475,7 +475,7 @@ if (clearBtn) {
     discount = 0;
     save("noir-cart", cart);
     updateCartUI();
-    showToast("Cart cleared");
+    showToast("Keranjang belanja telah dikosongkan");
   };
 }
 
@@ -488,9 +488,9 @@ if (applyPromoBtn && promoInput) {
     if (code === "NOIR15") {
       discount = 0.15;
       updateCartUI();
-      showToast("15% Promo discount applied! 🎉");
+      showToast("Diskon promo 15% berhasil digunakan! 🎉");
     } else if (code) {
-      showToast("Invalid promo code. Use NOIR15");
+      showToast("Kode promo tidak valid. Gunakan kode NOIR15");
     }
   };
 }
@@ -501,10 +501,10 @@ if (checkoutBtn) {
   checkoutBtn.onclick = () => {
     const itemsCount = Object.values(cart).reduce((a, b) => a + b, 0);
     if (itemsCount === 0) {
-      showToast("Your cart is empty. Please add items first.");
+      showToast("Keranjang Anda masih kosong. Silakan pilih menu terlebih dahulu.");
       return;
     }
-    showToast("Thank you! Order dispatched to our Barista Counter. ☕");
+    showToast("Terima kasih! Pesanan Anda telah diteruskan ke Barista kami. ☕");
     cart = {};
     discount = 0;
     save("noir-cart", cart);
@@ -538,14 +538,14 @@ function openModal(id) {
   $("#mImg").innerHTML = `<img src="${imgSrc(p)}" alt="${p.name}">`;
   const mTag = $("#mTag");
   if (mTag) {
-    mTag.textContent = p.tags && p.tags.includes("signature") ? "★ Signature Drink" : p.category === "hot" ? "Hot Drink" : "Iced Drink";
+    mTag.textContent = p.tags && p.tags.includes("signature") ? "★ Menu Spesial" : p.category === "hot" ? "Minuman Panas" : "Minuman Dingin";
     mTag.className = `tag ${p.category}`;
   }
   const mRating = $("#mRating");
   if (mRating) mRating.textContent = `★ ${p.rating || "4.9"}`;
   $("#mTitle").textContent = p.name;
   $("#mDesc").textContent = p.desc;
-  $("#mNotes").textContent = p.notes || "Balanced espresso and artisan craft.";
+  $("#mNotes").textContent = p.notes || "Espresso seimbang dengan racikan rasa artisanal pilihan.";
   $("#mPrice").textContent = rp(p.price);
 
   modal.hidden = false;

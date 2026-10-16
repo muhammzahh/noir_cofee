@@ -523,6 +523,9 @@ em {
   align-items: flex-end;
   gap: 2rem;
   margin-bottom: 3.5rem;
+  max-width: 82rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sub-title {
@@ -606,9 +609,12 @@ em {
 /* Card Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 22rem));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.2rem;
-  justify-content: start;
+  width: 100%;
+  max-width: 82rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -617,7 +623,6 @@ em {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 22rem;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(33, 24, 19, 0.06);
   border: 1px solid rgba(33, 24, 19, 0.06);
@@ -634,7 +639,6 @@ em {
 
 .card .img {
   aspect-ratio: 1 / 1;
-  max-height: 20rem;
   overflow: hidden;
   position: relative;
   background: var(--espresso);
@@ -804,6 +808,8 @@ em {
   text-align: center;
   font-size: 1.1rem;
   color: #7a6352;
+  max-width: 82rem;
+  margin: 0 auto;
 }
 
 /* ==========================================
@@ -1162,19 +1168,6 @@ em {
   align-items: center;
   gap: 0.6rem;
   animation: in 0.4s ease;
-}
-
-.feedback-success .success-icon {
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 50%;
-  background: rgba(200, 138, 78, 0.15);
-  border: 1px solid rgba(200, 138, 78, 0.35);
-  color: var(--caramel-bright);
-  display: grid;
-  place-items: center;
-  margin-bottom: 0.4rem;
-  box-shadow: 0 0 24px rgba(200, 138, 78, 0.25);
 }
 
 .feedback-success h4 {
@@ -1708,6 +1701,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1759,6 +1757,13 @@ footer {
   .foot-nav {
     flex-wrap: wrap;
     gap: 1.2rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
