@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NOIR Coffee — A Little Ritual. A Better Day.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Floating Background Particles (Parallax) -->
+    <div class="ambient-layer" aria-hidden="true">
+      <div class="floating-particle p1" data-speed="0.12"></div>
+      <div class="floating-particle p2" data-speed="-0.15"></div>
+      <div class="floating-particle p3" data-speed="0.2"></div>
+      <div class="floating-particle p4" data-speed="-0.1"></div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="nav" id="nav">
+      <a href="#home" class="logo">NOIR <span>Coffee</span></a>
+      <button
+        class="burger"
+        id="burger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <i></i><i></i>
+      </button>
+      <nav id="links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#coffee" class="nav-link">Our Coffee</a>
+        <a href="#ritual" class="nav-link">The Ritual</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Visit Us</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        Cart <b id="cartCount">0</b>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1 class="r" style="--d: 1">
+            Coffee, Crafted <em>with Intention.</em>
+          </h1>
+          <p class="lede r" style="--d: 2">
+            Small-batch roasted Arabica, Indonesian organic aren palm sugar, and velvety milk steamed to order. Six artisanal creations, made meticulously every time.
+          </p>
+          <div class="cta r" style="--d: 3">
+            <a class="btn primary glow" href="#coffee">Explore Menu</a>
+            <a class="btn ghost" href="#ritual">The Ritual</a>
+          </div>
+        </div>
+        <div class="hero-cup-wrap r" style="--d: 2" id="heroCup">
+          <img
+            src="assets/images/hero-latte.png"
+            alt="NOIR Kopi Latte"
+            class="hero-cup-img"
+          />
+        </div>
+      </div>
+      <a href="#coffee" class="scroll" aria-label="Scroll to coffee">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- Our Coffee Menu Section -->
+    <section class="menu" id="coffee">
+      <div class="menu-head scroll-reveal">
+        <div class="menu-title-group">
+          <span class="sub-title">CRAFTED FOR YOUR SENSES</span>
+          <h2>Our Coffee</h2>
+        </div>
+        <div class="tools">
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="search"
+              id="search"
+              placeholder="Search coffee or flavor notes..."
+              aria-label="Search products"
+            />
+          </div>
+          <div class="filters" role="group" aria-label="Filter">
+            <button class="on" data-f="all">All</button>
+            <button data-f="hot">Hot</button>
+            <button data-f="iced">Iced</button>
+            <button data-f="signature">Signature</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>
+        No coffee matches your search. Clear the search or pick All.
+      </p>
+    </section>
+
+    <!-- The NOIR Ritual Section (Bean to Cup) -->
+    <section class="ritual-section" id="ritual">
+      <div class="section-header scroll-reveal">
+        <span class="sub-title">FROM HARVEST TO CUP</span>
+        <h2>The NOIR Ritual</h2>
+        <p class="section-desc">
+          We treat every step as an art form. Here is how your daily sanctuary comes to life.
+        </p>
+      </div>
+
+      <div class="ritual-timeline">
+        <div class="timeline-bar">
+          <div class="timeline-progress" id="timelineProgress"></div>
+        </div>
+
+        <div class="ritual-step scroll-reveal-left">
+          <div class="step-num">01</div>
+          <div class="step-card">
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 4 13C4 7 11 3 11 3s7 4 7 10a7 7 0 0 1-7 7Z"></path>
+                <path d="M11 3v17"></path>
+                <path d="M11 13l4-3"></path>
+                <path d="M11 9l-3-2"></path>
+                <path d="M11 17l3-2"></path>
+              </svg>
+            </div>
+            <h3>Highland Harvest</h3>
+            <p>
+              Direct-trade single-origin Arabica sustainably handpicked from the lush volcanic highlands of Aceh Gayo and Toraja, supporting generational farming families.
+            </p>
+          </div>
+        </div>
+
+        <div class="ritual-step scroll-reveal-right">
+          <div class="step-num">02</div>
+          <div class="step-card">
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2c1 3.5 4 6 4 9.5a6 6 0 1 1-12 0c0-3.5 3-6 4-9.5 0 2 1 3 2 3s2-1 2-3Z"></path>
+                <path d="M12 13a2.5 2.5 0 0 0-2.5 2.5c0 1.5 1 2.5 2.5 3.5 1.5-1 2.5-2 2.5-3.5A2.5 2.5 0 0 0 12 13Z" fill="currentColor" fill-opacity="0.3"></path>
+              </svg>
+            </div>
+            <h3>Micro-Batch Roasting</h3>
+            <p>
+              Roasted weekly in small batches on our cast-iron drum roaster. We tailor each batch profile to accentuate cocoa, floral honey, and toasted nutty sweetness.
+            </p>
+          </div>
+        </div>
+
+        <div class="ritual-step scroll-reveal-left">
+          <div class="step-num">03</div>
+          <div class="step-card">
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7h12v4a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z"></path>
+                <path d="M15 9h6a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1h-6"></path>
+                <path d="M9 15v3"></path>
+                <path d="M9 21c-1 0-1.5-.7-1.5-1.5a1.5 1.5 0 0 1 3 0c0 .8-.5 1.5-1.5 1.5Z" fill="currentColor"></path>
+                <path d="M2 7h14"></path>
+              </svg>
+            </div>
+            <h3>9-Bar Precision Extraction</h3>
+            <p>
+              Pre-infused and pulled at calibrated temperature and 9-bar pressure to yield an exceptionally dense, golden-tiger crema bursting with aromatic oils.
+            </p>
+          </div>
+        </div>
+
+        <div class="ritual-step scroll-reveal-right">
+          <div class="step-num">04</div>
+          <div class="step-card">
+            <div class="step-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a3 3 0 0 1 0 6h-1"></path>
+                <path d="M3 8h15v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z"></path>
+                <path d="M2 21h17"></path>
+                <path d="M7 3c0 2 1.5 2 1.5 4"></path>
+                <path d="M12 3c0 2 1.5 2 1.5 4"></path>
+              </svg>
+            </div>
+            <h3>The Artful Pour</h3>
+            <p>
+              Steamed to velvety microfoam texture at 65°C, or layered with pure cold-pressed Indonesian aren nectar over slow-melting crystal clear ice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communal Reviews Section -->
+    <section class="reviews-section" id="reviews">
+      <div class="section-header scroll-reveal">
+        <span class="sub-title">COMMUNAL PRAISE</span>
+        <h2>Words from Coffee Lovers</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card scroll-reveal" style="--delay: 0.1s">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “The Arren Latte completely spoiled my coffee palate. The smoky depth of real aren palm sugar mixed with that velvety double shot is pure perfection.”
+          </p>
+          <div class="reviewer">
+            <div class="avatar">DA</div>
+            <div>
+              <h4>Dimas Anggara</h4>
+              <p>Coffee Connoisseur · Malang</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card scroll-reveal" style="--delay: 0.2s">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “Hands down the most thoughtful specialty coffee in town. Their Americano is clean with bright citrus notes, and the dark ambience is unmatched.”
+          </p>
+          <div class="reviewer">
+            <div class="avatar">SL</div>
+            <div>
+              <h4>Sarah Lestari</h4>
+              <p>Architect & Daily Patron</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card scroll-reveal" style="--delay: 0.3s">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “The Dark Mocha and Cappuccino are out of this world. The foam is like silk and the aesthetic makes every visit feel like a special treat.”
+          </p>
+          <div class="reviewer">
+            <div class="avatar">RP</div>
+            <div>
+              <h4>Rian Pratama</h4>
+              <p>Creative Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Us & Newsletter Section -->
+    <section class="visit-section" id="contact">
+      <div class="visit-card scroll-reveal">
+        <div class="visit-info">
+          <span class="sub-title">FIND SANCTUARY</span>
+          <h2>Visit Our Brew Bar</h2>
+          <p class="visit-desc">
+            Stop by for a quiet morning espresso, an afternoon iced latte work session, or to pick up fresh whole beans.
+          </p>
+          <ul class="visit-details">
+            <li><strong>Location:</strong> Jl. Danau Tambigan, Malang, Jawa Timur</li>
+            <li><strong>Hours:</strong> Open Daily 08:00 – 00:00</li>
+            <li><strong>Contact:</strong> noircoffee@gmail.com · +62 812-3456-7890</li>
+            <li><strong>Ambiance:</strong> High-Speed Fiber · Quiet Seating · Outdoor Garden</li>
+          </ul>
+        </div>
+
+        <div class="feedback-box">
+          <div class="feedback-header">
+            <h3>Kritik dan Saran</h3>
+            <p>Bantu kami menyempurnakan cita rasa dan layanan NOIR Coffee. Setiap masukan dari Anda sangat berharga.</p>
+          </div>
+          <form class="feedback-form" id="feedbackForm">
+            <div class="form-group">
+              <input type="text" id="feedbackName" placeholder="Nama Anda (opsional)" />
+            </div>
+            <div class="form-group">
+              <input type="email" id="feedbackEmail" placeholder="Email Anda" required />
+            </div>
+            <div class="form-group">
+              <select id="feedbackCategory" aria-label="Kategori Masukan">
+                <option value="Kualitas & Rasa Kopi">Kualitas & Rasa Kopi</option>
+                <option value="Pelayanan & Barista">Pelayanan & Barista</option>
+                <option value="Suasana & Kenyamanan">Suasana & Kenyamanan</option>
+                <option value="Saran Menu Baru">Saran Menu Baru</option>
+                <option value="Lainnya">Kritik / Saran Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea id="feedbackMessage" rows="3" placeholder="Tuliskan kritik dan saran Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn primary feedback-submit-btn">Kirim Masukan</button>
+          </form>
+          <div class="feedback-success" id="feedbackSuccess" hidden>
+            <div class="success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h4>Terima Kasih!</h4>
+            <p>Kritik dan saran Anda telah kami terima dan akan menjadi evaluasi untuk terus menyajikan yang terbaik.</p>
+            <button type="button" class="btn ghost btn-sm" id="feedbackResetBtn">Kirim Masukan Lain</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="foot-top">
+        <div class="foot-brand">
+          <p class="logo">NOIR <span>Coffee</span></p>
+          <p class="tagline">A Little Ritual. A Better Day.</p>
+        </div>
+        <div class="foot-nav">
+          <a href="#home">Home</a>
+          <a href="#coffee">Menu</a>
+          <a href="#ritual">Ritual</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© 2026 NOIR Coffee Roastery. All rights reserved.</p>
+        <p>Crafted with precision & intention.</p>
+      </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- Shopping Cart Drawer -->
+    <aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
+      <div class="drawer-head">
+        <h3>Your Cart</h3>
+        <button class="x" data-close="drawer" aria-label="Close cart">×</button>
+      </div>
+      <ul id="cartList"></ul>
+      <div class="drawer-foot">
+        <div class="promo-box">
+          <input type="text" id="promoInput" placeholder="Promo code (e.g. NOIR15)" />
+          <button class="btn" id="applyPromo">Apply</button>
+        </div>
+        <p class="drawer-total">Total <b id="cartTotal">Rp 0</b></p>
+        <button class="btn primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        <button class="btn ghost clear-btn" id="clear">Clear cart</button>
+      </div>
+    </aside>
+
+    <!-- Product Details Modal -->
+    <div
+      class="modal"
+      id="modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mTitle"
+    >
+      <div class="modal-box">
+        <button class="x" data-close="modal" aria-label="Close details">
+          ×
+        </button>
+        <div class="m-img" id="mImg"></div>
+        <div class="m-body">
+          <h3 id="mTitle"></h3>
+          <p class="m-desc" id="mDesc"></p>
+          <div class="flavor-notes-box">
+            <span class="flavor-title">Flavor Profile:</span>
+            <p id="mNotes" class="flavor-notes"></p>
+          </div>
+          <p class="price" id="mPrice"></p>
+          <div class="modal-actions">
+            <button class="btn primary" id="mAdd">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
